@@ -1,46 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
-
-type Movie = {
-  id: string;
-  title: string;
-  releaseYear: string;
-};
+import React from 'react';
+import Home from './screens/Home';
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
 
 const App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState<Movie[]>([]);
-
-  const getMovies = async () => {
-    try {
-      const response = await fetch('https://reactnative.dev/movies.json');
-      const json = await response.json();
-      setData(json.movies);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    getMovies();
-  }, []);
   return (
-    <View>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={({id}) => id}
-          renderItem={({item}) => (
-            <Text>
-              {item.title}, {item.releaseYear}
-            </Text>
-          )}
-        />
-      )}
-    </View>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 };
 
