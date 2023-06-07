@@ -26,7 +26,7 @@ const App = () => {
     getMovies();
   }, []);
   return (
-    <View>
+    <View style={{padding: 20, marginTop:20}}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
