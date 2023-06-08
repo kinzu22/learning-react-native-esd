@@ -59,7 +59,7 @@ const Screen = () => {
           onPress={() => {
             console.log('dang ky');
           }}>
-          <Text style={styles.link}>Đăng ký</Text>
+          <Text style={styles.link}> Đăng ký</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -72,10 +72,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   header: {
-    flex: 3,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 22,
   },
   logo: {
     width: 152,
@@ -89,7 +87,6 @@ const styles = StyleSheet.create({
     color: '#323842FF',
   },
   body: {
-    flex: 7,
     marginVertical: 20,
     justifyContent: 'center',
   },
@@ -109,7 +106,7 @@ const styles = StyleSheet.create({
   rememberText: {fontSize: 14, lineHeight: 22, marginLeft: 10},
   rememberCheckBox: {borderColor: 'black'},
   footer: {
-    flex: 1,
+    height: 50,
     marginVertical: 20,
     marginBottom: 10,
     flexDirection: 'row',
