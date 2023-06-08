@@ -1,27 +1,41 @@
-import React from 'react';
-import {StyleSheet, TextInput, View, Text, ViewStyle} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Text,
+  ViewStyle,
+  TouchableOpacity,
+} from 'react-native';
+import {PasswordIcon, ShowPasswordIcon} from '../../assets';
 
-type TextBoxProps = {
+type TextBoxPasswordProps = {
   title: string;
   placeholder?: string;
-  secureTextEntry?: boolean;
   style?: ViewStyle;
   leftIcon?: React.JSX.Element;
   rightIcon?: React.JSX.Element;
 };
 
-const TextBox = (props: TextBoxProps) => {
+const TextBoxPassword = (props: TextBoxPasswordProps) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <View style={(props.style, styles.container)}>
       <Text style={styles.title}>{props.title}</Text>
       <View style={styles.inputLine}>
-        {props.leftIcon}
+        <PasswordIcon width={16} height={16} />
         <TextInput
           placeholder={props.placeholder}
           style={styles.textInput}
-          secureTextEntry={props.secureTextEntry}
+          secureTextEntry={!showPassword}
         />
-        {props.rightIcon}
+        <TouchableOpacity onPress={handleTogglePasswordVisibility}>
+          <ShowPasswordIcon width={16} height={16} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -47,14 +61,10 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     height: 36,
-    paddingLeft: 22,
+    paddingLeft: 18,
     paddingRight: 34,
-    // marginTop: 20,
     fontSize: 14,
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    borderWidth: 0,
   },
 });
 
-export default TextBox;
+export default TextBoxPassword;
