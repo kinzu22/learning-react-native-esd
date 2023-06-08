@@ -20,15 +20,23 @@ const Screen = () => {
         <TextBox title="Domain" placeholder="Chọn domain" />
         <TextBox title="Tài khoản" placeholder="Nhập tài khoản" />
         <TextBox title="Mật khẩu" placeholder="Nhập mật khẩu" />
-        <View style={{marginTop: 28}}>
+        <View
+          style={{
+            marginTop: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
           <CheckBox
             disabled={false}
             value={true}
             onValueChange={() => {
               console.log('ghi nho tai khoan');
             }}
+            style={{borderColor: 'black'}}
           />
-          <Text style={{fontSize: 14, lineHeight: 22}}>Ghi nhớ tài khoản</Text>
+          <Text style={{fontSize: 14, lineHeight: 22, marginLeft: 10}}>
+            Ghi nhớ tài khoản
+          </Text>
         </View>
         <CustomButton title="Đăng nhập" />
         <TouchableOpacity
