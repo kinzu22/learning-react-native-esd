@@ -1,13 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
+import Login from './src/screens/login';
 
 const App = () => {
-  
   return (
-    <View style={{padding: 20, marginTop:20}}>
-      
+    <View style={styles.container}>
+      <Login />
     </View>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    marginVertical: 20,
+  },
+});
 
 export default App;
