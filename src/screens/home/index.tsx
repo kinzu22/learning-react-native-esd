@@ -1,14 +1,16 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import {useNavigation} from '@react-navigation/native';
+// import {AppRouter} from '../../navigations/AppRouter';
 import {styles} from './style';
-const HomeScreen = ({navigation}) => {
+
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text style={{color: 'black'}}>Home Screen</Text>
       <Button
         title="Go to Login Screen"
-        onPress={() => navigation.navigate('Login')}
+        // onPress={() => navigation.navigate('Login')}
       />
     </View>
   );

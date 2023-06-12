@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {Dimensions, View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {AppRouter} from '../../navigations/AppRouter';
 import CheckBox from '@react-native-community/checkbox';
 import TextBox from '../../components/TextBox';
 import CustomButton from '../../components/CustomButton';
@@ -13,12 +15,17 @@ import styles from './styles';
 
 const LoginScreen = () => {
   // Khởi tạo
-  const {height, width} = Dimensions.get('window');
+  // const {height, width} = Dimensions.get('window');
 
   const [rememberState, setRememberState] = useState(true);
 
   // HOOKS
 
+  // Navigation
+  const navigation = useNavigation();
+  const goToRegisterScreen = () => {
+    navigation.navigate(AppRouter.Register);
+  };
   // function api
 
   // function validate
@@ -27,6 +34,11 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={() => goToRegisterScreen()}>
+        <Text>Go to Register</Text>
+      </TouchableOpacity>
       <View style={styles.header}>
         <Image
           source={require('../../../assets/images/logo/HPT-logo.png')}

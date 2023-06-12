@@ -1,8 +1,21 @@
 import React from 'react';
-import MyStack from './src/navigation/stacks';
+// import {SafeAreaView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+
+// import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {RootNavigator} from './src/navigations/root.navigator';
 
 const App = () => {
-  return <MyStack />;
+  // const isDarkMode = useColorScheme() === 'dark';
+
+  // const backgroundStyle = {
+  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  // };
+  return (
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
 };
 
 export default App;
