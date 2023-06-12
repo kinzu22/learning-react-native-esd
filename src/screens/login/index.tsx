@@ -1,18 +1,35 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
+import {Dimensions, View, Text, Image, TouchableOpacity} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import TextBox from '../components/TextBox';
-import CustomButton from '../components/CustomButton';
-import TextBoxPassword from '../components/TextBoxPassword';
-import {PhosphorLeftIcon, PhosphorRightIcon, AccountIcon} from '../../assets';
+import TextBox from '../../components/TextBox';
+import CustomButton from '../../components/CustomButton';
+import TextBoxPassword from '../../components/TextBoxPassword';
+import {
+  PhosphorLeftIcon,
+  PhosphorRightIcon,
+  AccountIcon,
+} from '../../../assets';
+import styles from './styles';
 
-const Screen = () => {
+const LoginScreen = () => {
+  // Khởi tạo
+  const {height, width} = Dimensions.get('window');
+
   const [rememberState, setRememberState] = useState(true);
+
+  // HOOKS
+
+  // function api
+
+  // function validate
+
+  // function helper
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../../assets/images/logo/HPT-logo.png')}
+          source={require('../../../assets/images/logo/HPT-logo.png')}
           resizeMode="stretch"
           style={styles.logo}
         />
@@ -66,62 +83,4 @@ const Screen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 20,
-  },
-  header: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logo: {
-    width: 152,
-    height: 77,
-  },
-  title: {
-    fontSize: 32,
-    lineHeight: 48,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#323842FF',
-  },
-  body: {
-    marginVertical: 20,
-    justifyContent: 'center',
-  },
-  loginText: {
-    fontSize: 20,
-    lineHeight: 30,
-    color: '#565E6CFF',
-  },
-  dangNhapBtn: {
-    marginTop: 20,
-  },
-  rememberView: {
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  rememberText: {fontSize: 14, lineHeight: 22, marginLeft: 10},
-  rememberCheckBox: {borderColor: 'black'},
-  footer: {
-    height: 50,
-    marginVertical: 20,
-    marginBottom: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  link: {
-    fontSize: 14,
-    lineHeight: 22,
-    textAlign: 'center',
-    color: '#00BDD6FF',
-  },
-  forgotPassword: {
-    marginTop: 10,
-  },
-});
-
-export default Screen;
+export default LoginScreen;

@@ -1,0 +1,10 @@
+Root
+  Auth 
+    Login
+  Main 
+    Tab
+      Dashboard
+      Tài sản
+      Scan
+      Task
+      Request
