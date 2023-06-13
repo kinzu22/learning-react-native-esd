@@ -1,6 +1,7 @@
 Root
   Auth 
     Login
+    Register
   Main 
     Tab
       Dashboard
